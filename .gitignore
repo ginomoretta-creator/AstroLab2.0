@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+.env
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build Artifacts
+dist/
+build/
+*.exe
+*.dll
+*.so
+*.dylib
+*.spec
+*.bak
+
+# Frontend specific
+frontend/dist/
+frontend/build/
+frontend/release/
+frontend/release-packager/
+frontend/resources/backend/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Other heavy/unnecessary files
+*.zip
+*.tar.gz

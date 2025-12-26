@@ -1,0 +1,85 @@
+{
+    "name": "asl-sandbox",
+    "version": "1.0.0",
+    "description": "Quantum-Assisted & Probabilistic Warm-Starting for Low-Thrust Trajectory Optimization",
+    "main": "dist-electron/main.js",
+    "author": "ASL-Sandbox Team",
+    "license": "MIT",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview",
+        "electron:dev": "vite",
+        "electron:build": "npm run build && electron-builder",
+        "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+    },
+    "dependencies": {
+        "@react-three/drei": "^9.88.0",
+        "@react-three/fiber": "^8.15.0",
+        "clsx": "^2.0.0",
+        "framer-motion": "^10.16.0",
+        "lucide-react": "^0.294.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "recharts": "^2.10.0",
+        "three": "^0.158.0",
+        "zustand": "^4.4.0"
+    },
+    "devDependencies": {
+        "@types/node": "^20.10.0",
+        "@types/react": "^18.2.43",
+        "@types/react-dom": "^18.2.17",
+        "@types/three": "^0.158.0",
+        "@vitejs/plugin-react": "^4.2.1",
+        "autoprefixer": "^10.4.0",
+        "concurrently": "^8.2.0",
+        "electron": "^28.0.0",
+        "electron-builder": "^24.9.0",
+        "electron-packager": "^17.1.2",
+        "postcss": "^8.4.0",
+        "tailwindcss": "^3.3.0",
+        "typescript": "^5.3.0",
+        "vite": "^5.0.0",
+        "vite-plugin-electron": "^0.15.0",
+        "vite-plugin-electron-renderer": "^0.14.0"
+    },
+    "build": {
+        "appId": "com.aslsandbox.app",
+        "productName": "ASL-Sandbox",
+        "directories": {
+            "output": "release"
+        },
+        "files": [
+            "dist/**/*",
+            "dist-electron/**/*"
+        ],
+        "extraResources": [
+            {
+                "from": "resources/backend",
+                "to": "backend",
+                "filter": [
+                    "**/*"
+                ]
+            }
+        ],
+        "win": {
+            "target": [
+                "nsis"
+            ]
+        },
+        "nsis": {
+            "oneClick": false,
+            "allowToChangeInstallationDirectory": true
+        },
+        "mac": {
+            "target": [
+                "dmg"
+            ]
+        },
+        "linux": {
+            "target": [
+                "AppImage"
+            ]
+        }
+    }
+}
